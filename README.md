@@ -13,7 +13,7 @@ Also, modern JavaScript browsers are quirky, and the speed of Array / Float32Arr
 ### Allocation pattern
 ```
 let c = vec3.create();
-vec3.add( a, b, c ); // result will be allocated as a Float32Array
+vec3.add( a, b, c ); // result will be allocated (passed into c) as a Float32Array
 ```
 
 The functional style is obvious and this was a deliberate choice to avoid unneccessary prototype calls, which in testing were the result of a 5-10% time loss on my computer. This isn't a big deal for a small number of calculations but these vector calculations are meant to be calculated thousands of times a second, and each reference adds up. Passing the result by allocation is slightly slower than creating a new Array (JavaScript!), so this is why there are two patterns.
