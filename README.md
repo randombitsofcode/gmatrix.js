@@ -1,12 +1,12 @@
 # gmatrix.js
 
+## Motivation
+
 This is the result of performance testing some functions for high-speed vector and matrix math in JavaScript. I found the available libraries used variables wastefully, leading to unneeded garbage collection calls, and I needed an efficient and minimalistic approach that would interface well with webGL, and present the skinniest, simplest algorithm possible, and this is the WIP result.
 
 The style is very restrictive and I apologize but it's the only way I could balance concerns, and I feel it is quite an elegant solution that will appeal to JS developers looking for minimal footprint and efficient matrix calculations in graphics and machine learning. This is *not* as fast as a GPU computer shader would be so it should only be considered an option for web-based CPU computation.
 
-## Method
-
-This is a WIP and there is likely more optimization to be made, but my primary concern with existing matrix math libraries is that they are quite wasteful with variable allocation, resulting in heavy garbage collection, and this needs to be balanced with bare-bones calculation in order to correctly balance memory usage with CPU cycles.
+There is likely more optimization to be made, but I feel like I have found a good balance between speed, memory, and elegant use (at least for me!).
 
 Also, modern JavaScript browsers are quirky, and the speed of Array / Float32Array allocation and declaration is less than intuitive. For that reason almost all functions feature two patterns combined with a single conditional statement.
 
