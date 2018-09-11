@@ -16,7 +16,7 @@ let c = vec3.create();
 vec3.add( a, b, c ); // result will be allocated (passed into c) as a Float32Array
 ```
 
-The functional style is obvious and this was a deliberate choice to avoid unneccessary prototype calls, which in testing were the result of a 5-10% time loss on my computer. This isn't a big deal for a small number of calculations but these vector calculations are meant to be calculated thousands of times a second, and each reference adds up. Passing the result by allocation is slightly slower than creating a new Array (JavaScript!), so this is why there are two patterns.
+The functional style is obvious and this was a deliberate choice to avoid unneccessary prototype calls, which in testing were the result of a significant time loss in browsers. This isn't a big deal for a small number of calculations but these vector calculations are meant to be calculated thousands of times a second.
 
 ### Create a new Array
 ```
@@ -26,7 +26,7 @@ let c = vec3.add( a, b ); // returns result as a REGULAR non-typed array.
 
 Returning the result as a plain Array, due to some quirky JS optimization behind the scenes, is significantly (50%+) faster than allocation, and much faster than creating a typed array. This means that you can save a significant number of cycles by never resorting to allocation and simply using as much memory as is needed.
 
-This is not ideal if you are doing matrix calculations in a loop, so I use the allocation method when memory needs to be preserved, and I use the second method when memory is less of a concern. This gives the best of both worlds, I hope.
+This is not ideal if you are doing matrix calculations in a render loop, so I use the allocation method when memory needs to be preserved, and I use the second method when memory is less of a concern. This gives the best of both worlds, I hope.
 
 ## List of functions
 ```
