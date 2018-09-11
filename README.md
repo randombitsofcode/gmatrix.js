@@ -29,6 +29,7 @@ Returning the result as a plain Array, due to some quirky JS optimization behind
 This is not ideal if you are doing matrix calculations in a loop, so I use the allocation method when memory needs to be preserved, and I use the second method when memory is less of a concern. This gives the best of both worlds, I hope.
 
 ## List of functions
+```
 vec3.create( x = 0, y = 0, z = 0 ) // returns a typed array
 vec3.set( a, b ) // sets a = b
 vec3.add( a, b, c? ) // adds a and b, allocates to c? according to allocation pattern (see above)
@@ -83,3 +84,4 @@ mat4.mat3( a, b? ) // return mat3
 mat4.str( a )
 mat4.lookAt( a, c, up, d? ) // returns lookAt vector, which originates at a (eye), looks toward c (origin), and is oriented up (vec3)
 mat4.projection( fov = PI/2, aspect = 1, near = 1, far = 100, d? ) // returns projection matrix from fov (radians)
+```
