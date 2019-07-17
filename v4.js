@@ -1,3 +1,5 @@
+// @ https://github.com/randombitsofcode
+
 import { v3 } from "./v3.js"
 
 // Vector4 / Quaternion operations
