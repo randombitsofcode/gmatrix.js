@@ -8,7 +8,7 @@ import { v2, v3, v4, q4, m4 } from "./gmatrix.js"   // or "./gmatrix.min.js"
 let vec = new v4(), mat = new m4();
 
 // Chain operations
-console.log( m.multVec4( v ).equals( new v4() ) ); // true
+console.log( mat.multVec4( vec ).equals( new v4() ) ); // true
 ```
 
 ### Create new or mutate old
