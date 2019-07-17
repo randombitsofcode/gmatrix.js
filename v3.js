@@ -1,5 +1,4 @@
 // @ https://github.com/randombitsofcode
-
 // vector3 operations
 
 export class v3 {
