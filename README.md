@@ -1,9 +1,9 @@
 # gmatrix.js
 
 ### Usage
+```
 import { v2, v3, v4, q4, m4 } from "./gmatrix.js"   // or "./gmatrix.min.js"
 
-```
 // Create new objects
 let vec = new v4(), mat = new m4();
 
