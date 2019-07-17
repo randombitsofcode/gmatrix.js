@@ -1,3 +1,7 @@
+// @ https://github.com/randombitsofcode
+
+// vector3 operations
+
 export class v3 {
 	constructor( x = 0, y = 0, z = 0 ) {
 		this._x = x;
