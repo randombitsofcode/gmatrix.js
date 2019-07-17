@@ -1,3 +1,6 @@
+// @ https://github.com/randombitsofcode
+// vector2 operations
+
 export class v2 {
 	constructor( x = 0, y = 0 ) {
 		this._x = x;
